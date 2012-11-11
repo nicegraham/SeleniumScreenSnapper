@@ -3,7 +3,6 @@ package org.seleniumscreensnapper;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.Point;
-import org.openqa.selenium.remote.Augmenter;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
