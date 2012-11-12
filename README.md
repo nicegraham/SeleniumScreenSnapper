@@ -7,8 +7,11 @@ You can highlight a single weblement in the browser or a bunch of them.
     screenSnapper.screenshot(searchbox);
 
  Screenshot:
+
  ![Searchbox highlighted](https://raw.github.com/nicegraham/SeleniumScreenSnapper/master/images/1352712088481.png)
+
  thumbnail:
+
  ![Searchbox thumbnail](https://raw.github.com/nicegraham/SeleniumScreenSnapper/master/images/thumbnails/1352712088481.png)
 
     searchbox.sendKeys("cheese");
@@ -19,9 +22,12 @@ You can highlight a single weblement in the browser or a bunch of them.
     screenSnapper.screenshot(results);
 
  Screenshot:
+
  ![results highlighted](https://raw.github.com/nicegraham/SeleniumScreenSnapper/master/images/1352712091765.png)
  thumbnail 1:
+
  ![result 1 thumbnail](https://raw.github.com/nicegraham/SeleniumScreenSnapper/master/images/thumbnails/1352712091765_1.png)
  thumbnail 2:
+
  ![result 2 thumbnail](https://raw.github.com/nicegraham/SeleniumScreenSnapper/master/images/thumbnails/1352712091765_2.png)
  etc.
