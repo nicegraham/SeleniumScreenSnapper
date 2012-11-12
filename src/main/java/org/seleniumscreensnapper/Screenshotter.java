@@ -31,7 +31,7 @@ public class Screenshotter {
         try {
             return takeScreenshotAndOverlay(elements);
         } catch (IOException e) {
-            System.out.println("Error taking screenshot and highlight... " + e);
+            System.out.println("Error taking createSnapAndThumbnail and highlight... " + e);
         }
         return null;
     }

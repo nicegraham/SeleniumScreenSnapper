@@ -22,7 +22,7 @@ public class Demo {
         driver.get("http://www.google.com");
         WebElement searchbox = driver.findElement(By.name("q"));
 
-        screenSnapper.screenshot(searchbox);
+        screenSnapper.createSnapAndThumbnail(searchbox);
 
         searchbox.sendKeys("cheese");
 
@@ -34,7 +34,7 @@ public class Demo {
 
         List<WebElement> results = driver.findElements(By.className("g"));
 
-        screenSnapper.screenshot(results);
+        screenSnapper.createSnapAndThumbnail(results);
 
         driver.quit();
     }

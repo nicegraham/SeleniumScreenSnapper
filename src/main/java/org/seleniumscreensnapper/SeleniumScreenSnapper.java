@@ -21,11 +21,11 @@ public class SeleniumScreenSnapper {
         thumbnailer = new Thumbnailer(thumbnailFolder);
     }
 
-    public void screenshot(WebElement element) {
-        screenshot(new ArrayList<WebElement>(Arrays.asList(new WebElement[]{element})));
+    public void createSnapAndThumbnail(WebElement element) {
+        createSnapAndThumbnail(new ArrayList<WebElement>(Arrays.asList(new WebElement[]{element})));
     }
 
-    public void screenshot(List<WebElement> elements) {
+    public void createSnapAndThumbnail(List<WebElement> elements) {
         File overlayedFile = screenshotter.screenshotAndHighlight(elements);
         if (elements.size() > 1) {
             int index = 1;
