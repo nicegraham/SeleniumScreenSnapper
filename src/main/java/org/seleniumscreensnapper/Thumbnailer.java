@@ -93,7 +93,7 @@ public class Thumbnailer {
     private void writeThumbnailFileToDisk(File file, int index, BufferedImage image) {
         String filename = thumbnailFolder + System.getProperty("file.separator") + file.getName();
         if (index > 0) {
-            filename += "_" + index;
+            filename = filename.replace(".png", "_" + index + ".png");
         }
         System.out.println(filename);
         File thumbnail = new File(filename);
