@@ -3,6 +3,7 @@ package org.seleniumscreensnapper;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.Point;
+import org.openqa.selenium.remote.Augmenter;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -15,7 +16,7 @@ import java.util.List;
 public class Screenshotter {
 
     private final String screenshotFolder;
-    private final WebDriver driver;
+    private WebDriver driver;
 
     public Screenshotter(WebDriver driver, String screenshotFolder) {
         this.driver = driver;
@@ -100,7 +101,10 @@ public class Screenshotter {
     }
 
     private File createTempScreenshotFile() throws IOException {
-//        WebDriver augmentedDriver = new Augmenter().augment(driver);
+        try {
+            driver = new Augmenter().augment(driver);
+        } catch (Exception ignored) {
+        }
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
         File renamedFile = new File(System.getProperty("java.io.tmpdir"), new Date().getTime() + ".png");
