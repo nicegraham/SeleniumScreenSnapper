@@ -27,8 +27,13 @@ public class SeleniumScreenSnapper {
 
     public void screenshot(List<WebElement> elements) {
         File overlayedFile = screenshotter.screenshotAndHighlight(elements);
-        for (WebElement element : elements) {
-            thumbnailer.createAndSaveThumbnail(overlayedFile, element);
+        if (elements.size() > 1) {
+            int index = 1;
+            for (WebElement element : elements) {
+                thumbnailer.createAndSaveThumbnail(overlayedFile, index++, element);
+            }
+        } else {
+            thumbnailer.createAndSaveThumbnail(overlayedFile, elements.get(0));
         }
     }
 }

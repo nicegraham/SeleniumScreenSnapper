@@ -22,6 +22,10 @@ public class Thumbnailer {
     }
 
     public void createAndSaveThumbnail(File file, WebElement element) {
+        createAndSaveThumbnail(file, 0, element);
+    }
+
+    public void createAndSaveThumbnail(File file, int index, WebElement element) {
         Point centerPoint = getCenter(element);
         Dimension elementDimension = element.getSize();
         BufferedImage image = loadImage(file);
@@ -53,7 +57,7 @@ public class Thumbnailer {
                 image = resize(image, thumbnailWidth);
             }
         }
-        writeThumbnailFileToDisk(file, image);
+        writeThumbnailFileToDisk(file, index, image);
     }
 
     private Point getCenter(WebElement element) {
@@ -86,8 +90,11 @@ public class Thumbnailer {
         return transposedCoordinate;
     }
 
-    private void writeThumbnailFileToDisk(File file, BufferedImage image) {
+    private void writeThumbnailFileToDisk(File file, int index, BufferedImage image) {
         String filename = thumbnailFolder + System.getProperty("file.separator") + file.getName();
+        if (index > 0) {
+            filename += "_" + index;
+        }
         System.out.println(filename);
         File thumbnail = new File(filename);
         try {
